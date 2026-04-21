@@ -851,6 +851,54 @@
       }
     }
 
+    /* ── CONTACT HEADING ROW ── */
+    .contact-heading-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin: 0 0 80px;
+      position: relative;
+    }
+    .contact-heading-row .contact-heading {
+      margin: 0;
+    }
+    /* Reuse .footer-callback-btn styles for the inline variant */
+    .contact-callback-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 9999px;
+      border: 1px solid rgba(99, 102, 241, .55);
+      background: rgba(99, 102, 241, .1);
+      color: #a5b4fc;
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .25s, border-color .25s, color .25s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .contact-callback-btn:hover {
+      background: rgba(99, 102, 241, .22);
+      border-color: #6366f1;
+      color: #F5F2EC;
+    }
+    .contact-callback-btn svg { flex-shrink: 0; }
+
+    @media(max-width:640px) {
+      .contact-heading-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 40px;
+      }
+    }
+
     /* ── FOOTER ── */
     .footer {
       padding: 40px;
@@ -874,6 +922,189 @@
       text-decoration: none
     }
 
+    /* ── CALLBACK BUTTON ── */
+    .footer-callback-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 22px;
+      border-radius: 9999px;
+      border: 1px solid rgba(99, 102, 241, .55);
+      background: rgba(99, 102, 241, .1);
+      color: #a5b4fc;
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .25s, border-color .25s, color .25s;
+      white-space: nowrap;
+    }
+    .footer-callback-btn:hover {
+      background: rgba(99, 102, 241, .22);
+      border-color: #6366f1;
+      color: #F5F2EC;
+    }
+    .footer-callback-btn svg {
+      flex-shrink: 0;
+    }
+
+    /* ── CALLBACK MODAL ── */
+    .cb-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(10, 10, 11, .75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 0 16px 24px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .3s;
+    }
+    .cb-overlay.open {
+      opacity: 1;
+      pointer-events: all;
+    }
+    .cb-card {
+      width: 100%;
+      max-width: 520px;
+      background: #111114;
+      border: 1px solid rgba(245, 242, 236, .1);
+      border-radius: 20px;
+      padding: 36px;
+      transform: translateY(40px);
+      transition: transform .35s cubic-bezier(.2, .8, .2, 1);
+      position: relative;
+    }
+    .cb-overlay.open .cb-card {
+      transform: translateY(0);
+    }
+    .cb-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 28px;
+    }
+    .cb-title {
+      font-family: "Fraunces", serif;
+      font-size: 1.8rem;
+      color: #F5F2EC;
+      font-weight: 400;
+      letter-spacing: -.03em;
+      line-height: 1.1;
+    }
+    .cb-title span {
+      font-style: italic;
+      color: #6366f1;
+    }
+    .cb-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(245, 242, 236, .15);
+      background: transparent;
+      color: rgba(245, 242, 236, .5);
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .2s, color .2s;
+      flex-shrink: 0;
+      margin-top: 4px;
+    }
+    .cb-close:hover {
+      border-color: rgba(245, 242, 236, .4);
+      color: #F5F2EC;
+    }
+    .cb-field {
+      margin-bottom: 16px;
+    }
+    .cb-label {
+      display: block;
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: rgba(245, 242, 236, .45);
+      margin-bottom: 8px;
+    }
+    .cb-input, .cb-select {
+      width: 100%;
+      padding: 12px 16px;
+      background: rgba(245, 242, 236, .05);
+      border: 1px solid rgba(245, 242, 236, .12);
+      border-radius: 10px;
+      color: #F5F2EC;
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s, background .2s;
+    }
+    .cb-input::placeholder {
+      color: rgba(245, 242, 236, .28);
+    }
+    .cb-input:focus, .cb-select:focus {
+      border-color: rgba(99, 102, 241, .6);
+      background: rgba(99, 102, 241, .06);
+    }
+    .cb-select option {
+      background: #111114;
+      color: #F5F2EC;
+    }
+    .cb-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .cb-submit {
+      width: 100%;
+      margin-top: 8px;
+      padding: 14px;
+      border-radius: 10px;
+      border: none;
+      background: linear-gradient(135deg, #4f46e5, #6366f1);
+      color: #fff;
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity .2s, transform .2s;
+    }
+    .cb-submit:hover {
+      opacity: .88;
+      transform: translateY(-1px);
+    }
+    .cb-success {
+      text-align: center;
+      padding: 24px 0 8px;
+    }
+    .cb-success-icon {
+      font-size: 2.5rem;
+      margin-bottom: 14px;
+    }
+    .cb-success-title {
+      font-family: "Fraunces", serif;
+      font-size: 1.5rem;
+      color: #F5F2EC;
+      letter-spacing: -.02em;
+      margin-bottom: 8px;
+    }
+    .cb-success-sub {
+      font-family: "Inter", sans-serif;
+      font-size: 13px;
+      color: rgba(245, 242, 236, .5);
+      line-height: 1.5;
+    }
+
     @media(max-width:640px) {
       .footer {
         flex-direction: column;
@@ -892,6 +1123,26 @@
       .footer-social {
         order: 3;
         gap: 20px
+      }
+
+      .footer-callback-btn {
+        order: 1;
+        font-size: 9px;
+        padding: 10px 20px;
+      }
+
+      .cb-card {
+        padding: 28px 20px;
+        border-radius: 16px;
+      }
+
+      .cb-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .cb-title {
+        font-size: 1.5rem;
       }
     }
 
@@ -1152,14 +1403,22 @@
     }
 
     /* ── ContactBlock ── */
-    function ContactBlock() {
+    function ContactBlock({ onCallbackOpen }) {
       return (
         <section id="contact" className="contact">
           <div aria-hidden style={{ position: 'absolute', right: -200, top: -100, width: 700, height: 700, borderRadius: '50%', background: 'radial-gradient(circle,rgba(99,102,241,.18),transparent 70%)', filter: 'blur(90px)' }} />
           <div className="contact-label">(06) Moving offices? Hiring fast? Wi-Fi broken?</div>
-          <h2 className="contact-heading">
-            Ring <span style={{ fontStyle: 'italic', color: '#6366f1' }}>us.</span>
-          </h2>
+          <div className="contact-heading-row">
+            <h2 className="contact-heading">
+              Ring <span style={{ fontStyle: 'italic', color: '#6366f1' }}>us.</span>
+            </h2>
+            <button className="contact-callback-btn" onClick={onCallbackOpen} id="contact-callback-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.43 2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.83a16 16 0 0 0 6.29 6.29l1.68-1.68a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              Request a Callback
+            </button>
+          </div>
           <div className="contact-grid">
             <div className="contact-email-wrap">
               <div className="contact-field-label">Email</div>
@@ -1167,7 +1426,7 @@
             </div>
             <div>
               <div className="contact-field-label">Office</div>
-              <div className="contact-val">No.62,Aziz Mulk 2nd Street, Thousand LightsChennai<br />Tamil Nadu, IN 600006</div>
+              <div className="contact-val">No.62,Aziz Mulk 2nd Street, Thousand Lights, Chennai<br />Tamil Nadu, IN 600006</div>
             </div>
             <div>
               <div className="contact-field-label">Coverage</div>
@@ -1175,6 +1434,74 @@
             </div>
           </div>
         </section>
+      );
+    }
+
+    /* ── CallbackModal ── */
+    function CallbackModal({ open, onClose }) {
+      const [done, setDone] = React.useState(false);
+      const [form, setForm] = React.useState({ name: '', phone: '', time: '' });
+
+      // close on Escape
+      React.useEffect(() => {
+        const onKey = e => { if (e.key === 'Escape') onClose(); };
+        window.addEventListener('keydown', onKey);
+        return () => window.removeEventListener('keydown', onKey);
+      }, [onClose]);
+
+      // reset when re-opened
+      React.useEffect(() => {
+        if (open) setDone(false);
+      }, [open]);
+
+      function handleSubmit(e) {
+        e.preventDefault();
+        setDone(true);
+      }
+
+      return (
+        <div className={`cb-overlay${open ? ' open' : ''}`} onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
+          <div className="cb-card" role="dialog" aria-modal="true" aria-label="Request a callback">
+            <div className="cb-card-header">
+              <div className="cb-title">Call <span>us back.</span></div>
+              <button className="cb-close" onClick={onClose} aria-label="Close">✕</button>
+            </div>
+
+            {done ? (
+              <div className="cb-success">
+                <div className="cb-success-icon">📞</div>
+                <div className="cb-success-title">We'll ring you shortly.</div>
+                <div className="cb-success-sub">Our team will call you within the hour during business hours (Mon–Sat, 9 AM – 6 PM IST).</div>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit}>
+                <div className="cb-row">
+                  <div className="cb-field">
+                    <label className="cb-label" htmlFor="cb-name">Your name</label>
+                    <input id="cb-name" className="cb-input" type="text" placeholder="Priya M." required
+                      value={form.name} onChange={e => setForm(f => ({...f, name: e.target.value}))} />
+                  </div>
+                  <div className="cb-field">
+                    <label className="cb-label" htmlFor="cb-phone">Phone number</label>
+                    <input id="cb-phone" className="cb-input" type="tel" placeholder="+91 98765 43210" required
+                      value={form.phone} onChange={e => setForm(f => ({...f, phone: e.target.value}))} />
+                  </div>
+                </div>
+                <div className="cb-field">
+                  <label className="cb-label" htmlFor="cb-time">Best time to call</label>
+                  <select id="cb-time" className="cb-select"
+                    value={form.time} onChange={e => setForm(f => ({...f, time: e.target.value}))}>
+                    <option value="">Any time (Mon–Sat, 9 AM–6 PM)</option>
+                    <option value="morning">Morning — 9 AM to 12 PM</option>
+                    <option value="afternoon">Afternoon — 12 PM to 3 PM</option>
+                    <option value="evening">Evening — 3 PM to 6 PM</option>
+                  </select>
+                </div>
+                <button type="submit" className="cb-submit">Request Callback →</button>
+              </form>
+            )}
+          </div>
+        </div>
       );
     }
 
@@ -1193,6 +1520,7 @@
 
     /* ── App ── */
     function App() {
+      const [callbackOpen, setCallbackOpen] = React.useState(false);
       return (
         <>
           <EditorialHeader />
@@ -1204,8 +1532,9 @@
           <ProcessList />
           <StatsBand />
           <PullQuote />
-          <ContactBlock />
+          <ContactBlock onCallbackOpen={() => setCallbackOpen(true)} />
           <EditorialFooter />
+          <CallbackModal open={callbackOpen} onClose={() => setCallbackOpen(false)} />
         </>
       );
     }
