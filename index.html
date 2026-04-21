@@ -90,11 +90,14 @@
     }
 
     .hdr-logo {
-      font-family: "Inter", system-ui, sans-serif;
-      font-size: 11px;
-      letter-spacing: .3em;
-      color: #F5F2EC;
-      text-transform: uppercase
+      display: flex;
+      align-items: center;
+    }
+
+    .hdr-logo-img {
+      height: 44px;
+      width: auto;
+      display: block;
     }
 
     .hdr-tagline {
@@ -130,6 +133,10 @@
 
       .hdr-tagline {
         display: none
+      }
+
+      .hdr-logo-img {
+        height: 34px;
       }
 
       .hdr-nav {
@@ -1220,7 +1227,9 @@
     function EditorialHeader() {
       return (
         <header className="hdr">
-          <div className="hdr-logo">GLS / INFOTECH</div>
+          <div className="hdr-logo">
+            <img src="logo.png" alt="GLS Infotech" className="hdr-logo-img" />
+          </div>
           <div className="hdr-tagline">workplaces, wired.</div>
           <nav className="hdr-nav">
             {['Solutions', 'Pricing', 'Clients', 'Contact'].map(l =>
