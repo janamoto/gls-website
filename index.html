@@ -1,571 +1,1217 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>GLS Infotech — Editorial</title>
-<meta name="description" content="GLS Infotech equips your office with laptops, monitors, Wi-Fi and meeting-room kit — all on one monthly invoice. No capex. No IT team required."/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet"/>
-<style>
-/* ── Reset & base ── */
-*{box-sizing:border-box}
-html,body{margin:0;background:#0A0A0B;color:#F5F2EC;font-family:'Inter',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.96  0 0 0 0 0.95  0 0 0 0 0.92  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");pointer-events:none;z-index:1;opacity:.45;mix-blend-mode:overlay}
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:2;background:radial-gradient(circle at 50% 0%,rgba(99,102,241,.18),transparent 40%);}
-a{color:inherit}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GLS Infotech — Editorial</title>
+  <meta name="description"
+    content="GLS Infotech equips your office with laptops, monitors, Wi-Fi and meeting-room kit — all on one monthly invoice. No capex. No IT team required." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ── Reset & base ── */
+    * {
+      box-sizing: border-box
+    }
 
-/* ── Custom cursor (desktop only) ── */
-.cursor{position:fixed;width:14px;height:14px;border-radius:50%;background:#6366f1;pointer-events:none;z-index:100;transform:translate(-50%,-50%);transition:width .25s,height .25s,background .25s;mix-blend-mode:difference}
-@media(max-width:768px){.cursor{display:none}}
+    html,
+    body {
+      margin: 0;
+      background: #0A0A0B;
+      color: #F5F2EC;
+      font-family: 'Inter', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden
+    }
 
-/* ── HEADER ── */
-.hdr{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  padding:20px 40px;
-  display:grid;grid-template-columns:1fr auto 1fr;
-  align-items:center;
-  border-bottom:1px solid rgba(245,242,236,.08);
-  background:rgba(10,10,11,.55);
-  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-}
-.hdr-logo{font-family:"Inter",system-ui,sans-serif;font-size:11px;letter-spacing:.3em;color:#F5F2EC;text-transform:uppercase}
-.hdr-tagline{font-family:"Fraunces",serif;font-style:italic;font-size:14px;color:rgba(245,242,236,.55);text-align:center}
-.hdr-nav{display:flex;justify-content:flex-end;gap:32px;font-family:"Inter",system-ui,sans-serif;font-size:11px;letter-spacing:.25em;text-transform:uppercase}
-.hdr-nav a{color:#F5F2EC;text-decoration:none;white-space:nowrap}
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.96  0 0 0 0 0.95  0 0 0 0 0.92  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+      pointer-events: none;
+      z-index: 1;
+      opacity: .45;
+      mix-blend-mode: overlay
+    }
 
-@media(max-width:640px){
-  .hdr{padding:16px 20px;grid-template-columns:1fr auto;gap:0}
-  .hdr-tagline{display:none}
-  .hdr-nav{gap:16px;font-size:9px;letter-spacing:.15em}
-}
-@media(max-width:400px){
-  .hdr-nav{gap:10px}
-  .hdr-nav a:nth-child(2){display:none} /* hide Pricing on very small */
-}
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+      background: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, .18), transparent 40%);
+    }
 
-/* ── HERO ── */
-.hero{
-  min-height:100vh;position:relative;
-  padding:140px 40px 50px;
-  display:flex;flex-direction:column;justify-content:space-between;
-  overflow:hidden;
-}
-.hero-bottom{
-  position:relative;z-index:2;
-  display:grid;grid-template-columns:1.4fr 1fr 1fr;
-  gap:40px;align-items:end;
-  border-top:1px solid rgba(245,242,236,.1);
-  padding-top:32px;
-}
-.hero-desc{font-family:"Fraunces",serif;font-size:1.2rem;color:rgba(245,242,236,.78);line-height:1.5;max-width:520px}
-.hero-sectors{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.25em;color:rgba(245,242,236,.55);text-transform:uppercase}
-.hero-sectors-val{font-size:13px;letter-spacing:.12em;color:#F5F2EC;margin-top:6px}
-.hero-cta-wrap{display:flex;justify-content:flex-end}
-.hero-cta{display:inline-flex;align-items:center;gap:14px;padding:18px 26px;border-radius:9999px;background:#F5F2EC;color:#0A0A0B;font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.25em;text-transform:uppercase;text-decoration:none;font-weight:500}
+    a {
+      color: inherit
+    }
 
-@media(max-width:900px){
-  .hero-bottom{grid-template-columns:1fr 1fr;gap:24px}
-  .hero-desc{grid-column:1/-1}
-}
-@media(max-width:640px){
-  .hero{padding:110px 20px 40px}
-  .hero-bottom{grid-template-columns:1fr;gap:20px;padding-top:24px}
-  .hero-cta-wrap{justify-content:flex-start}
-  .hero-desc{font-size:1.05rem}
-}
+    /* ── Custom cursor (desktop only) ── */
+    .cursor {
+      position: fixed;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #6366f1;
+      pointer-events: none;
+      z-index: 100;
+      transform: translate(-50%, -50%);
+      transition: width .25s, height .25s, background .25s;
+      mix-blend-mode: difference
+    }
 
-/* ── MARQUEE ── */
-.marquee-wrap{
-  border-top:1px solid rgba(245,242,236,.12);
-  border-bottom:1px solid rgba(245,242,236,.12);
-  padding:28px 0;overflow:hidden;white-space:nowrap;
-  background:linear-gradient(180deg,rgba(99,102,241,.04),transparent);
-}
-.marquee-track{display:inline-block;animation:marquee 45s linear infinite}
-@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-33.33%)}}
-.marquee-item{font-family:"Fraunces",serif;font-style:italic;font-size:3rem;margin:0 32px;letter-spacing:-.02em}
-@media(max-width:640px){
-  .marquee-wrap{padding:20px 0}
-  .marquee-item{font-size:2rem;margin:0 20px}
-}
+    @media(max-width:768px) {
+      .cursor {
+        display: none
+      }
+    }
 
-/* ── MANIFESTO ── */
-.manifesto{
-  padding:140px 40px;
-  display:grid;grid-template-columns:1fr 3fr;gap:80px;
-  border-bottom:1px solid rgba(245,242,236,.08);
-  position:relative;
-}
-.manifesto-label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(245,242,236,.55);text-transform:uppercase;padding-top:12px;position:relative}
-.manifesto-body{font-family:"Fraunces",serif;font-weight:300;font-size:clamp(1.4rem,2.6vw,2.4rem);line-height:1.35;color:#F5F2EC;letter-spacing:-.01em;position:relative}
+    /* ── HEADER ── */
+    .hdr {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 20px 40px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      border-bottom: 1px solid rgba(245, 242, 236, .08);
+      background: rgba(10, 10, 11, .55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
 
-@media(max-width:900px){
-  .manifesto{grid-template-columns:1fr;gap:28px;padding:80px 40px}
-}
-@media(max-width:640px){
-  .manifesto{padding:64px 20px}
-  .manifesto-body{font-size:1.25rem}
-}
+    .hdr-logo {
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: #F5F2EC;
+      text-transform: uppercase
+    }
 
-/* ── SERVICES ── */
-.services{padding:120px 40px;border-bottom:1px solid rgba(245,242,236,.08)}
-.services-label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(245,242,236,.55);text-transform:uppercase;margin-bottom:80px}
-.svc-row{
-  display:grid;grid-template-columns:80px 1fr 2fr 60px;
-  align-items:center;padding:38px 0;
-  border-top:1px solid rgba(245,242,236,.12);cursor:pointer;
-  transition:.4s;
-}
-.svc-num{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(245,242,236,.55)}
-.svc-title{font-family:"Fraunces",serif;font-size:clamp(1.6rem,4vw,3.5rem);font-weight:400;color:#F5F2EC;letter-spacing:-.03em;transition:.4s}
-.svc-desc{font-family:"Inter",sans-serif;font-size:14px;color:rgba(245,242,236,.6);line-height:1.5}
-.svc-arrow{font-family:"Fraunces",serif;font-size:28px;color:rgba(245,242,236,.4);transition:.4s;text-align:right}
-.svc-divider{border-top:1px solid rgba(245,242,236,.12)}
+    .hdr-tagline {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 14px;
+      color: rgba(245, 242, 236, .55);
+      text-align: center
+    }
 
-@media(max-width:900px){
-  .svc-row{grid-template-columns:56px 1fr 40px;gap:0}
-  .svc-desc{display:none}
-}
-@media(max-width:640px){
-  .services{padding:64px 20px}
-  .services-label{margin-bottom:48px}
-  .svc-row{grid-template-columns:44px 1fr 32px;padding:28px 0}
-  .svc-title{font-size:clamp(1.4rem,7vw,2rem)}
-  .svc-arrow{font-size:22px}
-}
+    .hdr-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 32px;
+      font-family: "Inter", system-ui, sans-serif;
+      font-size: 11px;
+      letter-spacing: .25em;
+      text-transform: uppercase
+    }
 
-/* ── CLIENT GRID ── */
-.clients{padding:120px 40px;border-bottom:1px solid rgba(245,242,236,.08)}
-.clients-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:64px}
-.clients-label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(245,242,236,.55);text-transform:uppercase}
-.clients-sub{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.2em;color:rgba(245,242,236,.4)}
-.client-grid{display:grid;grid-template-columns:repeat(3,1fr)}
-.client-cell{padding:56px 24px;border-top:1px solid rgba(245,242,236,.12);position:relative;overflow:hidden}
-.client-cell-indent{border-left:1px solid rgba(245,242,236,.12)}
-.client-name{font-family:"Fraunces",serif;font-size:1.8rem;color:#F5F2EC;letter-spacing:-.02em}
-.client-detail{font-family:"Inter",sans-serif;font-size:12px;letter-spacing:.15em;color:rgba(245,242,236,.45);text-transform:uppercase;margin-top:10px}
-.clients-divider{border-top:1px solid rgba(245,242,236,.12)}
+    .hdr-nav a {
+      color: #F5F2EC;
+      text-decoration: none;
+      white-space: nowrap
+    }
 
-@media(max-width:900px){
-  .client-grid{grid-template-columns:repeat(2,1fr)}
-  /* reset indent logic for 2-col — handled inline via JS */
-}
-@media(max-width:640px){
-  .clients{padding:64px 20px}
-  .clients-head{flex-direction:column;gap:8px;margin-bottom:40px}
-  .client-grid{grid-template-columns:1fr}
-  .client-cell{padding:32px 16px}
-  .client-cell-indent{border-left:none}
-  .client-name{font-size:1.5rem}
-}
+    @media(max-width:640px) {
+      .hdr {
+        padding: 16px 20px;
+        grid-template-columns: 1fr auto;
+        gap: 0
+      }
 
-/* ── PROCESS ── */
-.process{padding:140px 40px;border-bottom:1px solid rgba(245,242,236,.08);position:relative}
-.process-label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(245,242,236,.55);text-transform:uppercase;margin-bottom:64px;position:relative}
-.process-row{
-  display:grid;grid-template-columns:160px 1fr 2fr;
-  align-items:baseline;padding:40px 0;
-  border-top:1px solid rgba(245,242,236,.12);position:relative;
-}
-.process-num{font-family:"Fraunces",serif;font-size:clamp(2.5rem,6vw,5rem);font-style:italic;color:#6366f1;letter-spacing:-.03em}
-.process-title{font-family:"Fraunces",serif;font-size:clamp(1.4rem,2.4vw,2.2rem);color:#F5F2EC;letter-spacing:-.02em}
-.process-desc{font-family:"Inter",sans-serif;font-size:15px;color:rgba(245,242,236,.6);line-height:1.5}
-.process-divider{border-top:1px solid rgba(245,242,236,.12)}
+      .hdr-tagline {
+        display: none
+      }
 
-@media(max-width:900px){
-  .process-row{grid-template-columns:100px 1fr;gap:16px}
-  .process-desc{grid-column:2;font-size:14px}
-}
-@media(max-width:640px){
-  .process{padding:64px 20px}
-  .process-label{margin-bottom:40px}
-  .process-row{grid-template-columns:1fr;padding:28px 0;gap:8px}
-  .process-num{font-size:clamp(2rem,12vw,3.5rem)}
-  .process-title{font-size:clamp(1.3rem,5vw,1.8rem)}
-  .process-desc{grid-column:1;font-size:14px}
-}
+      .hdr-nav {
+        gap: 16px;
+        font-size: 9px;
+        letter-spacing: .15em
+      }
+    }
 
-/* ── STATS BAND ── */
-.stats{
-  border-bottom:1px solid rgba(245,242,236,.08);
-  display:grid;grid-template-columns:repeat(4,1fr);
-  position:relative;
-}
-.stat-cell{padding:72px 32px;text-align:center;position:relative}
-.stat-cell-indent{border-left:1px solid rgba(245,242,236,.12)}
-.stat-num{font-family:"Fraunces",serif;font-size:clamp(2.5rem,5vw,4rem);color:#F5F2EC;letter-spacing:-.03em;line-height:1}
-.stat-label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(245,242,236,.5);text-transform:uppercase;margin-top:18px}
+    @media(max-width:400px) {
+      .hdr-nav {
+        gap: 10px
+      }
 
-@media(max-width:900px){
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .stat-cell{padding:56px 24px}
-  /* first of each row shouldn't have left border */
-  .stat-cell:nth-child(2n+1){border-left:none}
-  .stat-cell:nth-child(2n){border-left:1px solid rgba(245,242,236,.12)}
-  .stat-cell:nth-child(3),.stat-cell:nth-child(4){border-top:1px solid rgba(245,242,236,.12)}
-}
-@media(max-width:640px){
-  .stats{grid-template-columns:repeat(2,1fr)}
-  .stat-cell{padding:40px 16px}
-  .stat-num{font-size:clamp(2rem,10vw,3rem)}
-  .stat-label{font-size:10px;letter-spacing:.2em}
-}
+      .hdr-nav a:nth-child(2) {
+        display: none
+      }
 
-/* ── PULL QUOTE ── */
-.pullquote{
-  padding:160px 10%;border-bottom:1px solid rgba(245,242,236,.08);
-  text-align:center;position:relative;overflow:hidden;
-}
-.pullquote-text{font-family:"Fraunces",serif;font-style:italic;font-size:clamp(1.5rem,3.4vw,3.2rem);font-weight:300;line-height:1.35;color:#F5F2EC;letter-spacing:-.02em;position:relative}
-.pullquote-attr{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(245,242,236,.5);text-transform:uppercase;margin-top:40px;position:relative}
+      /* hide Pricing on very small */
+    }
 
-@media(max-width:640px){
-  .pullquote{padding:80px 20px}
-  .pullquote-text{font-size:clamp(1.25rem,5.5vw,1.8rem)}
-  .pullquote-attr{font-size:10px;letter-spacing:.2em;margin-top:28px}
-}
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      padding: 140px 40px 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
 
-/* ── CONTACT ── */
-.contact{padding:160px 40px 120px;border-bottom:1px solid rgba(245,242,236,.08);position:relative;overflow:hidden}
-.contact-label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(245,242,236,.55);text-transform:uppercase;margin-bottom:40px;position:relative}
-.contact-heading{font-family:"Fraunces",serif;font-weight:400;font-size:clamp(3.5rem,12vw,11rem);line-height:.95;letter-spacing:-.04em;color:#F5F2EC;margin:0 0 80px;position:relative}
-.contact-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px;
-  border-top:1px solid rgba(245,242,236,.12);padding-top:40px;position:relative;
-}
-.contact-field-label{font-family:"Inter",sans-serif;font-size:11px;letter-spacing:.3em;color:rgba(245,242,236,.5);text-transform:uppercase;margin-bottom:16px}
-.contact-email{font-family:"Fraunces",serif;font-size:clamp(1.4rem,3vw,2.6rem);color:#F5F2EC;text-decoration:underline;text-underline-offset:8px;text-decoration-thickness:1px;letter-spacing:-.02em}
-.contact-val{font-family:"Fraunces",serif;font-size:1.3rem;color:#F5F2EC;line-height:1.4}
+    .hero-bottom {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+      align-items: end;
+      border-top: 1px solid rgba(245, 242, 236, .1);
+      padding-top: 32px;
+    }
 
-@media(max-width:900px){
-  .contact-grid{grid-template-columns:1fr 1fr;gap:32px}
-  .contact-email-wrap{grid-column:1/-1}
-}
-@media(max-width:640px){
-  .contact{padding:80px 20px 64px}
-  .contact-heading{margin-bottom:48px;font-size:clamp(3rem,18vw,6rem)}
-  .contact-grid{grid-template-columns:1fr;gap:32px;padding-top:32px}
-  .contact-email-wrap{grid-column:1}
-  .contact-email{font-size:clamp(1.2rem,5.5vw,1.8rem)}
-}
+    .hero-desc {
+      font-family: "Fraunces", serif;
+      font-size: 1.2rem;
+      color: rgba(245, 242, 236, .78);
+      line-height: 1.5;
+      max-width: 520px
+    }
 
-/* ── FOOTER ── */
-.footer{
-  padding:40px;display:flex;justify-content:space-between;align-items:center;
-  font-family:"Inter",sans-serif;font-size:10px;letter-spacing:.3em;
-  color:rgba(245,242,236,.45);text-transform:uppercase;
-}
-.footer-social{display:flex;gap:24px}
-.footer-social a{color:inherit;text-decoration:none}
+    .hero-sectors {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .25em;
+      color: rgba(245, 242, 236, .55);
+      text-transform: uppercase
+    }
 
-@media(max-width:640px){
-  .footer{
-    flex-direction:column;gap:16px;padding:32px 20px;
-    text-align:center;align-items:center;
-    font-size:9px;letter-spacing:.2em;
-  }
-  .footer-location{order:2}
-  .footer-social{order:3;gap:20px}
-}
+    .hero-sectors-val {
+      font-size: 13px;
+      letter-spacing: .12em;
+      color: #F5F2EC;
+      margin-top: 6px
+    }
 
-/* ── Keyframes ── */
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes shimmer{0%{background-position:0 0}100%{background-position:200% 0}}
-</style>
+    .hero-cta-wrap {
+      display: flex;
+      justify-content: flex-end
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 26px;
+      border-radius: 9999px;
+      background: #F5F2EC;
+      color: #0A0A0B;
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500
+    }
+
+    @media(max-width:900px) {
+      .hero-bottom {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px
+      }
+
+      .hero-desc {
+        grid-column: 1/-1
+      }
+    }
+
+    @media(max-width:640px) {
+      .hero {
+        padding: 110px 20px 40px
+      }
+
+      .hero-bottom {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding-top: 24px
+      }
+
+      .hero-cta-wrap {
+        justify-content: flex-start
+      }
+
+      .hero-desc {
+        font-size: 1.05rem
+      }
+    }
+
+    /* ── MARQUEE ── */
+    .marquee-wrap {
+      border-top: 1px solid rgba(245, 242, 236, .12);
+      border-bottom: 1px solid rgba(245, 242, 236, .12);
+      padding: 28px 0;
+      overflow: hidden;
+      white-space: nowrap;
+      background: linear-gradient(180deg, rgba(99, 102, 241, .04), transparent);
+    }
+
+    .marquee-track {
+      display: inline-block;
+      animation: marquee 45s linear infinite
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-33.33%)
+      }
+    }
+
+    .marquee-item {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: 3rem;
+      margin: 0 32px;
+      letter-spacing: -.02em
+    }
+
+    @media(max-width:640px) {
+      .marquee-wrap {
+        padding: 20px 0
+      }
+
+      .marquee-item {
+        font-size: 2rem;
+        margin: 0 20px
+      }
+    }
+
+    /* ── MANIFESTO ── */
+    .manifesto {
+      padding: 140px 40px;
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 80px;
+      border-bottom: 1px solid rgba(245, 242, 236, .08);
+      position: relative;
+    }
+
+    .manifesto-label {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .55);
+      text-transform: uppercase;
+      padding-top: 12px;
+      position: relative
+    }
+
+    .manifesto-body {
+      font-family: "Fraunces", serif;
+      font-weight: 300;
+      font-size: clamp(1.4rem, 2.6vw, 2.4rem);
+      line-height: 1.35;
+      color: #F5F2EC;
+      letter-spacing: -.01em;
+      position: relative
+    }
+
+    @media(max-width:900px) {
+      .manifesto {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 80px 40px
+      }
+    }
+
+    @media(max-width:640px) {
+      .manifesto {
+        padding: 64px 20px
+      }
+
+      .manifesto-body {
+        font-size: 1.25rem
+      }
+    }
+
+    /* ── SERVICES ── */
+    .services {
+      padding: 120px 40px;
+      border-bottom: 1px solid rgba(245, 242, 236, .08)
+    }
+
+    .services-label {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .55);
+      text-transform: uppercase;
+      margin-bottom: 80px
+    }
+
+    .svc-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 2fr 60px;
+      align-items: center;
+      padding: 38px 0;
+      border-top: 1px solid rgba(245, 242, 236, .12);
+      cursor: pointer;
+      transition: .4s;
+    }
+
+    .svc-num {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .55)
+    }
+
+    .svc-title {
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.6rem, 4vw, 3.5rem);
+      font-weight: 400;
+      color: #F5F2EC;
+      letter-spacing: -.03em;
+      transition: .4s
+    }
+
+    .svc-desc {
+      font-family: "Inter", sans-serif;
+      font-size: 14px;
+      color: rgba(245, 242, 236, .6);
+      line-height: 1.5
+    }
+
+    .svc-arrow {
+      font-family: "Fraunces", serif;
+      font-size: 28px;
+      color: rgba(245, 242, 236, .4);
+      transition: .4s;
+      text-align: right
+    }
+
+    .svc-divider {
+      border-top: 1px solid rgba(245, 242, 236, .12)
+    }
+
+    @media(max-width:900px) {
+      .svc-row {
+        grid-template-columns: 56px 1fr 40px;
+        gap: 0
+      }
+
+      .svc-desc {
+        display: none
+      }
+    }
+
+    @media(max-width:640px) {
+      .services {
+        padding: 64px 20px
+      }
+
+      .services-label {
+        margin-bottom: 48px
+      }
+
+      .svc-row {
+        grid-template-columns: 44px 1fr 32px;
+        padding: 28px 0
+      }
+
+      .svc-title {
+        font-size: clamp(1.4rem, 7vw, 2rem)
+      }
+
+      .svc-arrow {
+        font-size: 22px
+      }
+    }
+
+    /* ── CLIENT GRID ── */
+    .clients {
+      padding: 120px 40px;
+      border-bottom: 1px solid rgba(245, 242, 236, .08)
+    }
+
+    .clients-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 64px
+    }
+
+    .clients-label {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .55);
+      text-transform: uppercase
+    }
+
+    .clients-sub {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .2em;
+      color: rgba(245, 242, 236, .4)
+    }
+
+    .client-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr)
+    }
+
+    .client-cell {
+      padding: 56px 24px;
+      border-top: 1px solid rgba(245, 242, 236, .12);
+      position: relative;
+      overflow: hidden
+    }
+
+    .client-cell-indent {
+      border-left: 1px solid rgba(245, 242, 236, .12)
+    }
+
+    .client-name {
+      font-family: "Fraunces", serif;
+      font-size: 1.8rem;
+      color: #F5F2EC;
+      letter-spacing: -.02em
+    }
+
+    .client-detail {
+      font-family: "Inter", sans-serif;
+      font-size: 12px;
+      letter-spacing: .15em;
+      color: rgba(245, 242, 236, .45);
+      text-transform: uppercase;
+      margin-top: 10px
+    }
+
+    .clients-divider {
+      border-top: 1px solid rgba(245, 242, 236, .12)
+    }
+
+    @media(max-width:900px) {
+      .client-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      /* reset indent logic for 2-col — handled inline via JS */
+    }
+
+    @media(max-width:640px) {
+      .clients {
+        padding: 64px 20px
+      }
+
+      .clients-head {
+        flex-direction: column;
+        gap: 8px;
+        margin-bottom: 40px
+      }
+
+      .client-grid {
+        grid-template-columns: 1fr
+      }
+
+      .client-cell {
+        padding: 32px 16px
+      }
+
+      .client-cell-indent {
+        border-left: none
+      }
+
+      .client-name {
+        font-size: 1.5rem
+      }
+    }
+
+    /* ── PROCESS ── */
+    .process {
+      padding: 140px 40px;
+      border-bottom: 1px solid rgba(245, 242, 236, .08);
+      position: relative
+    }
+
+    .process-label {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .55);
+      text-transform: uppercase;
+      margin-bottom: 64px;
+      position: relative
+    }
+
+    .process-row {
+      display: grid;
+      grid-template-columns: 160px 1fr 2fr;
+      align-items: baseline;
+      padding: 40px 0;
+      border-top: 1px solid rgba(245, 242, 236, .12);
+      position: relative;
+    }
+
+    .process-num {
+      font-family: "Fraunces", serif;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-style: italic;
+      color: #6366f1;
+      letter-spacing: -.03em
+    }
+
+    .process-title {
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.4rem, 2.4vw, 2.2rem);
+      color: #F5F2EC;
+      letter-spacing: -.02em
+    }
+
+    .process-desc {
+      font-family: "Inter", sans-serif;
+      font-size: 15px;
+      color: rgba(245, 242, 236, .6);
+      line-height: 1.5
+    }
+
+    .process-divider {
+      border-top: 1px solid rgba(245, 242, 236, .12)
+    }
+
+    @media(max-width:900px) {
+      .process-row {
+        grid-template-columns: 100px 1fr;
+        gap: 16px
+      }
+
+      .process-desc {
+        grid-column: 2;
+        font-size: 14px
+      }
+    }
+
+    @media(max-width:640px) {
+      .process {
+        padding: 64px 20px
+      }
+
+      .process-label {
+        margin-bottom: 40px
+      }
+
+      .process-row {
+        grid-template-columns: 1fr;
+        padding: 28px 0;
+        gap: 8px
+      }
+
+      .process-num {
+        font-size: clamp(2rem, 12vw, 3.5rem)
+      }
+
+      .process-title {
+        font-size: clamp(1.3rem, 5vw, 1.8rem)
+      }
+
+      .process-desc {
+        grid-column: 1;
+        font-size: 14px
+      }
+    }
+
+    /* ── STATS BAND ── */
+    .stats {
+      border-bottom: 1px solid rgba(245, 242, 236, .08);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+    }
+
+    .stat-cell {
+      padding: 72px 32px;
+      text-align: center;
+      position: relative
+    }
+
+    .stat-cell-indent {
+      border-left: 1px solid rgba(245, 242, 236, .12)
+    }
+
+    .stat-num {
+      font-family: "Fraunces", serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: #F5F2EC;
+      letter-spacing: -.03em;
+      line-height: 1
+    }
+
+    .stat-label {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .5);
+      text-transform: uppercase;
+      margin-top: 18px
+    }
+
+    @media(max-width:900px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .stat-cell {
+        padding: 56px 24px
+      }
+
+      /* first of each row shouldn't have left border */
+      .stat-cell:nth-child(2n+1) {
+        border-left: none
+      }
+
+      .stat-cell:nth-child(2n) {
+        border-left: 1px solid rgba(245, 242, 236, .12)
+      }
+
+      .stat-cell:nth-child(3),
+      .stat-cell:nth-child(4) {
+        border-top: 1px solid rgba(245, 242, 236, .12)
+      }
+    }
+
+    @media(max-width:640px) {
+      .stats {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .stat-cell {
+        padding: 40px 16px
+      }
+
+      .stat-num {
+        font-size: clamp(2rem, 10vw, 3rem)
+      }
+
+      .stat-label {
+        font-size: 10px;
+        letter-spacing: .2em
+      }
+    }
+
+    /* ── PULL QUOTE ── */
+    .pullquote {
+      padding: 160px 10%;
+      border-bottom: 1px solid rgba(245, 242, 236, .08);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pullquote-text {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 3.4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.35;
+      color: #F5F2EC;
+      letter-spacing: -.02em;
+      position: relative
+    }
+
+    .pullquote-attr {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .5);
+      text-transform: uppercase;
+      margin-top: 40px;
+      position: relative
+    }
+
+    @media(max-width:640px) {
+      .pullquote {
+        padding: 80px 20px
+      }
+
+      .pullquote-text {
+        font-size: clamp(1.25rem, 5.5vw, 1.8rem)
+      }
+
+      .pullquote-attr {
+        font-size: 10px;
+        letter-spacing: .2em;
+        margin-top: 28px
+      }
+    }
+
+    /* ── CONTACT ── */
+    .contact {
+      padding: 160px 40px 120px;
+      border-bottom: 1px solid rgba(245, 242, 236, .08);
+      position: relative;
+      overflow: hidden
+    }
+
+    .contact-label {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .55);
+      text-transform: uppercase;
+      margin-bottom: 40px;
+      position: relative
+    }
+
+    .contact-heading {
+      font-family: "Fraunces", serif;
+      font-weight: 400;
+      font-size: clamp(3.5rem, 12vw, 11rem);
+      line-height: .95;
+      letter-spacing: -.04em;
+      color: #F5F2EC;
+      margin: 0 0 80px;
+      position: relative
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      border-top: 1px solid rgba(245, 242, 236, .12);
+      padding-top: 40px;
+      position: relative;
+    }
+
+    .contact-field-label {
+      font-family: "Inter", sans-serif;
+      font-size: 11px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .5);
+      text-transform: uppercase;
+      margin-bottom: 16px
+    }
+
+    .contact-email {
+      font-family: "Fraunces", serif;
+      font-size: clamp(1.4rem, 3vw, 2.6rem);
+      color: #F5F2EC;
+      text-decoration: underline;
+      text-underline-offset: 8px;
+      text-decoration-thickness: 1px;
+      letter-spacing: -.02em
+    }
+
+    .contact-val {
+      font-family: "Fraunces", serif;
+      font-size: 1.3rem;
+      color: #F5F2EC;
+      line-height: 1.4
+    }
+
+    @media(max-width:900px) {
+      .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px
+      }
+
+      .contact-email-wrap {
+        grid-column: 1/-1
+      }
+    }
+
+    @media(max-width:640px) {
+      .contact {
+        padding: 80px 20px 64px
+      }
+
+      .contact-heading {
+        margin-bottom: 48px;
+        font-size: clamp(3rem, 18vw, 6rem)
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-top: 32px
+      }
+
+      .contact-email-wrap {
+        grid-column: 1
+      }
+
+      .contact-email {
+        font-size: clamp(1.2rem, 5.5vw, 1.8rem)
+      }
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      padding: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: "Inter", sans-serif;
+      font-size: 10px;
+      letter-spacing: .3em;
+      color: rgba(245, 242, 236, .45);
+      text-transform: uppercase;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 24px
+    }
+
+    .footer-social a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    @media(max-width:640px) {
+      .footer {
+        flex-direction: column;
+        gap: 16px;
+        padding: 32px 20px;
+        text-align: center;
+        align-items: center;
+        font-size: 9px;
+        letter-spacing: .2em;
+      }
+
+      .footer-location {
+        order: 2
+      }
+
+      .footer-social {
+        order: 3;
+        gap: 20px
+      }
+    }
+
+    /* ── Keyframes ── */
+    @keyframes spin {
+      to {
+        transform: rotate(360deg)
+      }
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: 0 0
+      }
+
+      100% {
+        background-position: 200% 0
+      }
+    }
+  </style>
 </head>
+
 <body data-screen-label="Editorial Landing">
-<div class="cursor" id="c"></div>
-<div id="root"></div>
-<script>
-  const c=document.getElementById('c');
-  document.addEventListener('mousemove',e=>{c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';});
-  document.addEventListener('mouseover',e=>{if(e.target.closest('a,button')){c.style.width='40px';c.style.height='40px';c.style.background='#F5F2EC';}});
-  document.addEventListener('mouseout',e=>{if(e.target.closest('a,button')){c.style.width='14px';c.style.height='14px';c.style.background='#6366f1';}});
-</script>
-<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
-<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
-<script type="text/babel">
+  <div class="cursor" id="c"></div>
+  <div id="root"></div>
+  <script>
+    const c = document.getElementById('c');
+    document.addEventListener('mousemove', e => { c.style.left = e.clientX + 'px'; c.style.top = e.clientY + 'px'; });
+    document.addEventListener('mouseover', e => { if (e.target.closest('a,button')) { c.style.width = '40px'; c.style.height = '40px'; c.style.background = '#F5F2EC'; } });
+    document.addEventListener('mouseout', e => { if (e.target.closest('a,button')) { c.style.width = '14px'; c.style.height = '14px'; c.style.background = '#6366f1'; } });
+  </script>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js"
+    integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js"
+    integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js"
+    integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y"
+    crossorigin="anonymous"></script>
+  <script type="text/babel">
 
-/* ── EditorialHeader ── */
-function EditorialHeader() {
-  return (
-    <header className="hdr">
-      <div className="hdr-logo">GLS / INFOTECH</div>
-      <div className="hdr-tagline">workplaces, wired.</div>
-      <nav className="hdr-nav">
-        {['Solutions','Pricing','Clients','Contact'].map(l =>
-          <a key={l} href={'#'+l.toLowerCase()}>{l}</a>
-        )}
-      </nav>
-    </header>
-  );
-}
+    /* ── EditorialHeader ── */
+    function EditorialHeader() {
+      return (
+        <header className="hdr">
+          <div className="hdr-logo">GLS / INFOTECH</div>
+          <div className="hdr-tagline">workplaces, wired.</div>
+          <nav className="hdr-nav">
+            {['Solutions', 'Pricing', 'Clients', 'Contact'].map(l =>
+              <a key={l} href={'#' + l.toLowerCase()}>{l}</a>
+            )}
+          </nav>
+        </header>
+      );
+    }
 
-/* ── EditorialHero ── */
-function EditorialHero() {
-  const [mouse, setMouse] = React.useState({x:0.5,y:0.5});
-  const ref = React.useRef(null);
-  return (
-    <section
-      ref={ref}
-      onMouseMove={e=>{const r=ref.current.getBoundingClientRect();setMouse({x:(e.clientX-r.left)/r.width,y:(e.clientY-r.top)/r.height});}}
-      className="hero">
+    /* ── EditorialHero ── */
+    function EditorialHero() {
+      const [mouse, setMouse] = React.useState({ x: 0.5, y: 0.5 });
+      const ref = React.useRef(null);
+      return (
+        <section
+          ref={ref}
+          onMouseMove={e => { const r = ref.current.getBoundingClientRect(); setMouse({ x: (e.clientX - r.left) / r.width, y: (e.clientY - r.top) / r.height }); }}
+          className="hero">
 
-      {/* layered blobs */}
-      <div aria-hidden style={{position:'absolute',inset:0,pointerEvents:'none',zIndex:0}}>
-        <div style={{position:'absolute',width:720,height:720,borderRadius:'50%',background:'radial-gradient(circle,#4338ca 0%,transparent 65%)',filter:'blur(90px)',opacity:.55,left:`calc(${mouse.x*100}% - 360px)`,top:`calc(${mouse.y*100}% - 360px)`,transition:'left 1.2s cubic-bezier(.2,.8,.2,1),top 1.2s cubic-bezier(.2,.8,.2,1)'}}/>
-        <div style={{position:'absolute',width:520,height:520,borderRadius:'50%',background:'radial-gradient(circle,#0ea5e9 0%,transparent 65%)',filter:'blur(90px)',opacity:.35,right:`calc(${(1-mouse.x)*30}% - 260px)`,bottom:`calc(${(1-mouse.y)*30}% - 260px)`,transition:'right 1.6s cubic-bezier(.2,.8,.2,1),bottom 1.6s cubic-bezier(.2,.8,.2,1)'}}/>
-        <div style={{position:'absolute',inset:0,backgroundImage:'linear-gradient(rgba(245,242,236,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(245,242,236,.04) 1px,transparent 1px)',backgroundSize:'80px 80px',maskImage:'radial-gradient(circle at center,#000 30%,transparent 75%)',WebkitMaskImage:'radial-gradient(circle at center,#000 30%,transparent 75%)'}}/>
-      </div>
-
-      {/* orbit ring */}
-      <div aria-hidden style={{position:'absolute',right:-200,top:'50%',transform:'translateY(-50%)',width:900,height:900,border:'1px solid rgba(245,242,236,.06)',borderRadius:'50%',pointerEvents:'none',zIndex:0}}>
-        <div style={{position:'absolute',inset:80,border:'1px solid rgba(245,242,236,.05)',borderRadius:'50%'}}>
-          <div style={{position:'absolute',inset:140,border:'1px dashed rgba(99,102,241,.18)',borderRadius:'50%',animation:'spin 60s linear infinite'}}/>
-        </div>
-      </div>
-
-      <div style={{fontFamily:'"Inter",sans-serif',fontSize:11,letterSpacing:'.3em',color:'rgba(245,242,236,.55)',textTransform:'uppercase',position:'relative',zIndex:2,display:'flex',gap:24,alignItems:'center'}}>
-        <span style={{width:10,height:10,borderRadius:'50%',background:'#22c55e',boxShadow:'0 0 14px #22c55e',flexShrink:0}}/>
-        <span>(01) — IT, billed monthly · Chennai → Pan-India</span>
-      </div>
-
-      <h1 style={{fontFamily:'"Fraunces",serif',fontWeight:400,fontSize:'clamp(3.8rem,14vw,14rem)',lineHeight:.92,margin:'40px 0',letterSpacing:'-0.045em',color:'#F5F2EC',position:'relative',zIndex:2}}>
-        <span style={{display:'block'}}>Your team</span>
-        <span style={{display:'block',fontStyle:'italic'}}>deserves better</span>
-        <span style={{display:'block',background:'linear-gradient(90deg,#a5b4fc,#38bdf8,#f0abfc)',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',backgroundSize:'200% 100%',animation:'shimmer 6s linear infinite'}}>hardware.</span>
-      </h1>
-
-      <div className="hero-bottom">
-        <div className="hero-desc">
-          We put laptops, monitors, Wi-Fi and meeting-room kit in your office — and one clean monthly invoice in your inbox. No capex. No IT team required.
-        </div>
-        <div className="hero-sectors">
-          <div>Sectors</div>
-          <div className="hero-sectors-val">Startups · Studios · SMEs</div>
-        </div>
-        <div className="hero-cta-wrap">
-          <a href="#contact" className="hero-cta">
-            Request a setup <span style={{fontFamily:'"Fraunces",serif',fontStyle:'italic',textTransform:'none',fontSize:16,letterSpacing:0}}>→</span>
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── Marquee ── */
-function Marquee() {
-  const items = ['No capex','One monthly invoice','Same-week delivery','Dell · HP · Lenovo · Apple','Monitors & docks','Wi-Fi that works','On-site support','GST compliant','Swap when it breaks'];
-  const row = [...items,...items,...items];
-  return (
-    <div className="marquee-wrap">
-      <div className="marquee-track">
-        {row.map((t,i)=>(
-          <span key={i} className="marquee-item" style={{color:i%2?'#6366f1':'#F5F2EC'}}>
-            {t} <span style={{color:'rgba(245,242,236,.28)'}}>✦</span>
-          </span>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-/* ── Manifesto ── */
-function Manifesto() {
-  return (
-    <section className="manifesto">
-      <div aria-hidden style={{position:'absolute',left:'30%',top:-120,width:280,height:280,borderRadius:'50%',background:'radial-gradient(circle,rgba(99,102,241,.18),transparent 70%)',filter:'blur(60px)'}}/>
-      <div className="manifesto-label">(02) Why GLS</div>
-      <div className="manifesto-body">
-        Most growing teams in India are still stuck choosing between <span style={{fontStyle:'italic',color:'#94a3b8'}}>buying laptops outright</span> — tying up lakhs of rupees in depreciating boxes — or chasing <span style={{fontStyle:'italic',color:'#94a3b8'}}>vendors across cities</span> every time Wi-Fi breaks. We exist to end both problems. GLS is your <span style={{fontStyle:'italic',color:'#6366f1'}}>outsourced IT desk:</span> devices, software, networking and support bundled into a single monthly contract. You focus on the work. We keep the workplace running.
-      </div>
-    </section>
-  );
-}
-
-/* ── ServicesIndex ── */
-function ServicesIndex() {
-  const rows = [
-    ['01','Device-as-a-Service','MacBooks, ThinkPads, Latitudes — delivered configured, replaced when they break, upgraded when you grow'],
-    ['02','Office Networking','Mesh Wi-Fi, switches, firewall, cabling — designed, installed and monitored by us'],
-    ['03','Meeting Rooms & AV','Displays, conference cams, mics, room booking — end-to-end AV that actually works'],
-    ['04','Managed IT Support','A help-desk number your team can call, plus on-site visits across Tamil Nadu and major metros'],
-  ];
-  const [hover,setHover]=React.useState(null);
-  return (
-    <section id="solutions" className="services">
-      <div className="services-label">(03) What's in your monthly invoice</div>
-      {rows.map(([n,t,d],i)=>(
-        <div key={n}
-          className="svc-row"
-          onMouseEnter={()=>setHover(i)}
-          onMouseLeave={()=>setHover(null)}
-          style={{background:hover===i?'linear-gradient(90deg,rgba(99,102,241,.06),transparent)':'transparent'}}>
-          <div className="svc-num">{n}</div>
-          <div className="svc-title" style={{fontStyle:hover===i?'italic':'normal',transform:hover===i?'translateX(12px)':'translateX(0)'}}>{t}</div>
-          <div className="svc-desc">{d}</div>
-          <div className="svc-arrow" style={{color:hover===i?'#6366f1':'rgba(245,242,236,.4)',transform:hover===i?'translateX(0)':'translateX(-10px)'}}>→</div>
-        </div>
-      ))}
-      <div className="svc-divider"/>
-    </section>
-  );
-}
-
-/* ── ClientGrid ── */
-function ClientGrid() {
-  const clients = [
-    ['Nimbus Studio','Design agency · 14 seats'],
-    ['Quill & Co.','Legal practice · 8 seats'],
-    ['Harbor Clinic','Dental group · 6 locations'],
-    ['Patel Textiles','SME · 22 seats + warehouse Wi-Fi'],
-    ['Kettle Coffee','Café chain · 9 branches POS'],
-    ['North Wing Films','Post-production · 12 workstations'],
-  ];
-  // Determine cols responsively via JS for border-left logic
-  const [cols,setCols] = React.useState(3);
-  React.useEffect(()=>{
-    const update=()=>setCols(window.innerWidth<640?1:window.innerWidth<900?2:3);
-    update();
-    window.addEventListener('resize',update);
-    return()=>window.removeEventListener('resize',update);
-  },[]);
-  return (
-    <section id="clients" className="clients">
-      <div className="clients-head">
-        <div className="clients-label">(04) A few people we look after</div>
-        <div className="clients-sub">Currently active · 2026</div>
-      </div>
-      <div className="client-grid">
-        {clients.map(([n,d],i)=>(
-          <div key={n} className={`client-cell${i%cols?' client-cell-indent':''}`}>
-            <div className="client-name">{n}</div>
-            <div className="client-detail">{d}</div>
+          {/* layered blobs */}
+          <div aria-hidden style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 0 }}>
+            <div style={{ position: 'absolute', width: 720, height: 720, borderRadius: '50%', background: 'radial-gradient(circle,#4338ca 0%,transparent 65%)', filter: 'blur(90px)', opacity: .55, left: `calc(${mouse.x * 100}% - 360px)`, top: `calc(${mouse.y * 100}% - 360px)`, transition: 'left 1.2s cubic-bezier(.2,.8,.2,1),top 1.2s cubic-bezier(.2,.8,.2,1)' }} />
+            <div style={{ position: 'absolute', width: 520, height: 520, borderRadius: '50%', background: 'radial-gradient(circle,#0ea5e9 0%,transparent 65%)', filter: 'blur(90px)', opacity: .35, right: `calc(${(1 - mouse.x) * 30}% - 260px)`, bottom: `calc(${(1 - mouse.y) * 30}% - 260px)`, transition: 'right 1.6s cubic-bezier(.2,.8,.2,1),bottom 1.6s cubic-bezier(.2,.8,.2,1)' }} />
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(245,242,236,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(245,242,236,.04) 1px,transparent 1px)', backgroundSize: '80px 80px', maskImage: 'radial-gradient(circle at center,#000 30%,transparent 75%)', WebkitMaskImage: 'radial-gradient(circle at center,#000 30%,transparent 75%)' }} />
           </div>
-        ))}
-      </div>
-      <div className="clients-divider"/>
-    </section>
-  );
-}
 
-/* ── ProcessList ── */
-function ProcessList() {
-  const steps=[
-    ['01','Walk your space','We visit (or video-call) your office, count the seats, check the Wi-Fi dead zones.'],
-    ['02','One monthly proposal','Everything you need on one line item. GST on top, no hidden charges.'],
-    ['03','We show up','Delivery, setup, cabling, Wi-Fi calibration, inductions for your team.'],
-    ['04','Call us, always','One number for every IT problem. We fix it, replace it or escalate it — same day.'],
-  ];
-  return (
-    <section className="process">
-      <div aria-hidden style={{position:'absolute',right:'10%',top:'20%',width:340,height:340,borderRadius:'50%',background:'radial-gradient(circle,rgba(14,165,233,.16),transparent 70%)',filter:'blur(70px)'}}/>
-      <div className="process-label">(05) From hello to handover</div>
-      {steps.map(([n,t,d])=>(
-        <div key={n} className="process-row">
-          <div className="process-num">{n}</div>
-          <div className="process-title">{t}</div>
-          <div className="process-desc">{d}</div>
+          {/* orbit ring */}
+          <div aria-hidden style={{ position: 'absolute', right: -200, top: '50%', transform: 'translateY(-50%)', width: 900, height: 900, border: '1px solid rgba(245,242,236,.06)', borderRadius: '50%', pointerEvents: 'none', zIndex: 0 }}>
+            <div style={{ position: 'absolute', inset: 80, border: '1px solid rgba(245,242,236,.05)', borderRadius: '50%' }}>
+              <div style={{ position: 'absolute', inset: 140, border: '1px dashed rgba(99,102,241,.18)', borderRadius: '50%', animation: 'spin 60s linear infinite' }} />
+            </div>
+          </div>
+
+          <div style={{ fontFamily: '"Inter",sans-serif', fontSize: 11, letterSpacing: '.3em', color: 'rgba(245,242,236,.55)', textTransform: 'uppercase', position: 'relative', zIndex: 2, display: 'flex', gap: 24, alignItems: 'center' }}>
+            <span style={{ width: 10, height: 10, borderRadius: '50%', background: '#22c55e', boxShadow: '0 0 14px #22c55e', flexShrink: 0 }} />
+            <span>(01) — IT, billed monthly · Chennai → Pan-India</span>
+          </div>
+
+          <h1 style={{ fontFamily: '"Fraunces",serif', fontWeight: 400, fontSize: 'clamp(3.8rem,14vw,14rem)', lineHeight: .92, margin: '40px 0', letterSpacing: '-0.045em', color: '#F5F2EC', position: 'relative', zIndex: 2 }}>
+            <span style={{ display: 'block' }}>Your team</span>
+            <span style={{ display: 'block', fontStyle: 'italic' }}>deserves better</span>
+            <span style={{ display: 'block', background: 'linear-gradient(90deg,#a5b4fc,#38bdf8,#f0abfc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundSize: '200% 100%', animation: 'shimmer 6s linear infinite' }}>hardware.</span>
+          </h1>
+
+          <div className="hero-bottom">
+            <div className="hero-desc">
+              We put laptops, monitors, Wi-Fi and meeting-room kit in your office — and one clean monthly invoice in your inbox. No capex. No IT team required.
+            </div>
+            <div className="hero-sectors">
+              <div>Sectors</div>
+              <div className="hero-sectors-val">Startups · Studios · SMEs</div>
+            </div>
+            <div className="hero-cta-wrap">
+              <a href="#contact" className="hero-cta">
+                Request a setup <span style={{ fontFamily: '"Fraunces",serif', fontStyle: 'italic', textTransform: 'none', fontSize: 16, letterSpacing: 0 }}>→</span>
+              </a>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    /* ── Marquee ── */
+    function Marquee() {
+      const items = ['No capex', 'One monthly invoice', 'Same-week delivery', 'Dell · HP · Lenovo · Apple', 'Monitors & docks', 'Wi-Fi that works', 'On-site support', 'GST compliant', 'Swap when it breaks'];
+      const row = [...items, ...items, ...items];
+      return (
+        <div className="marquee-wrap">
+          <div className="marquee-track">
+            {row.map((t, i) => (
+              <span key={i} className="marquee-item" style={{ color: i % 2 ? '#6366f1' : '#F5F2EC' }}>
+                {t} <span style={{ color: 'rgba(245,242,236,.28)' }}>✦</span>
+              </span>
+            ))}
+          </div>
         </div>
-      ))}
-      <div className="process-divider"/>
-    </section>
-  );
-}
+      );
+    }
 
-/* ── StatsBand ── */
-function StatsBand() {
-  const stats=[['One','Invoice · one vendor'],['7 days','From quote to desk'],['Same day','On-site response'],['Zero','Long contracts']];
-  return (
-    <section className="stats">
-      <div aria-hidden style={{position:'absolute',left:'50%',top:'50%',transform:'translate(-50%,-50%)',width:700,height:220,borderRadius:'50%',background:'radial-gradient(ellipse,rgba(99,102,241,.12),transparent 70%)',filter:'blur(60px)',pointerEvents:'none'}}/>
-      {stats.map(([n,l],i)=>(
-        <div key={n} className={`stat-cell${i?'':''}`} style={{borderLeft:i?'1px solid rgba(245,242,236,.12)':'none'}}>
-          <div className="stat-num">{n}</div>
-          <div className="stat-label">{l}</div>
-        </div>
-      ))}
-    </section>
-  );
-}
+    /* ── Manifesto ── */
+    function Manifesto() {
+      return (
+        <section className="manifesto">
+          <div aria-hidden style={{ position: 'absolute', left: '30%', top: -120, width: 280, height: 280, borderRadius: '50%', background: 'radial-gradient(circle,rgba(99,102,241,.18),transparent 70%)', filter: 'blur(60px)' }} />
+          <div className="manifesto-label">(02) Why GLS</div>
+          <div className="manifesto-body">
+            Most growing teams in India are still stuck choosing between <span style={{ fontStyle: 'italic', color: '#94a3b8' }}>buying laptops outright</span> — tying up lakhs of rupees in depreciating boxes — or chasing <span style={{ fontStyle: 'italic', color: '#94a3b8' }}>vendors across cities</span> every time Wi-Fi breaks. We exist to end both problems. GLS is your <span style={{ fontStyle: 'italic', color: '#6366f1' }}>outsourced IT desk:</span> devices, software, networking and support bundled into a single monthly contract. You focus on the work. We keep the workplace running.
+          </div>
+        </section>
+      );
+    }
 
-/* ── PullQuote ── */
-function PullQuote() {
-  return (
-    <section className="pullquote">
-      <div aria-hidden style={{position:'absolute',inset:0,backgroundImage:'radial-gradient(circle at 30% 40%,rgba(99,102,241,.14),transparent 50%),radial-gradient(circle at 70% 60%,rgba(14,165,233,.12),transparent 55%)',filter:'blur(60px)'}}/>
-      <div className="pullquote-text">
-        "We moved into our new office on a Monday morning. Laptops on desks, Wi-Fi covering every corner, the printer already on the network. It felt like magic — it was just GLS."
-      </div>
-      <div className="pullquote-attr">Priya M. — Operations, Nimbus Studio</div>
-    </section>
-  );
-}
+    /* ── ServicesIndex ── */
+    function ServicesIndex() {
+      const rows = [
+        ['01', 'Device-as-a-Service', 'MacBooks, ThinkPads, Latitudes — delivered configured, replaced when they break, upgraded when you grow'],
+        ['02', 'Office Networking', 'Mesh Wi-Fi, switches, firewall, cabling — designed, installed and monitored by us'],
+        ['03', 'Meeting Rooms & AV', 'Displays, conference cams, mics, room booking — end-to-end AV that actually works'],
+        ['04', 'Managed IT Support', 'A help-desk number your team can call, plus on-site visits across Tamil Nadu and major metros'],
+      ];
+      const [hover, setHover] = React.useState(null);
+      return (
+        <section id="solutions" className="services">
+          <div className="services-label">(03) What's in your monthly invoice</div>
+          {rows.map(([n, t, d], i) => (
+            <div key={n}
+              className="svc-row"
+              onMouseEnter={() => setHover(i)}
+              onMouseLeave={() => setHover(null)}
+              style={{ background: hover === i ? 'linear-gradient(90deg,rgba(99,102,241,.06),transparent)' : 'transparent' }}>
+              <div className="svc-num">{n}</div>
+              <div className="svc-title" style={{ fontStyle: hover === i ? 'italic' : 'normal', transform: hover === i ? 'translateX(12px)' : 'translateX(0)' }}>{t}</div>
+              <div className="svc-desc">{d}</div>
+              <div className="svc-arrow" style={{ color: hover === i ? '#6366f1' : 'rgba(245,242,236,.4)', transform: hover === i ? 'translateX(0)' : 'translateX(-10px)' }}>→</div>
+            </div>
+          ))}
+          <div className="svc-divider" />
+        </section>
+      );
+    }
 
-/* ── ContactBlock ── */
-function ContactBlock() {
-  return (
-    <section id="contact" className="contact">
-      <div aria-hidden style={{position:'absolute',right:-200,top:-100,width:700,height:700,borderRadius:'50%',background:'radial-gradient(circle,rgba(99,102,241,.18),transparent 70%)',filter:'blur(90px)'}}/>
-      <div className="contact-label">(06) Moving offices? Hiring fast? Wi-Fi broken?</div>
-      <h2 className="contact-heading">
-        Ring <span style={{fontStyle:'italic',color:'#6366f1'}}>us.</span>
-      </h2>
-      <div className="contact-grid">
-        <div className="contact-email-wrap">
-          <div className="contact-field-label">Email</div>
-          <a href="mailto:hello@glsinfotech.com" className="contact-email">hello@glsinfotech.com</a>
-        </div>
-        <div>
-          <div className="contact-field-label">Office</div>
-          <div className="contact-val">Chennai<br/>Tamil Nadu, IN</div>
-        </div>
-        <div>
-          <div className="contact-field-label">Coverage</div>
-          <div className="contact-val">Pan-India<br/>On-site · Remote</div>
-        </div>
-      </div>
-    </section>
-  );
-}
+    /* ── ClientGrid ── */
+    function ClientGrid() {
+      const clients = [
+        ['Nimbus Studio', 'Design agency · 14 seats'],
+        ['Quill & Co.', 'Legal practice · 8 seats'],
+        ['Harbor Clinic', 'Dental group · 6 locations'],
+        ['Patel Textiles', 'SME · 22 seats + warehouse Wi-Fi'],
+        ['Kettle Coffee', 'Café chain · 9 branches POS'],
+        ['North Wing Films', 'Post-production · 12 workstations'],
+      ];
+      // Determine cols responsively via JS for border-left logic
+      const [cols, setCols] = React.useState(3);
+      React.useEffect(() => {
+        const update = () => setCols(window.innerWidth < 640 ? 1 : window.innerWidth < 900 ? 2 : 3);
+        update();
+        window.addEventListener('resize', update);
+        return () => window.removeEventListener('resize', update);
+      }, []);
+      return (
+        <section id="clients" className="clients">
+          <div className="clients-head">
+            <div className="clients-label">(04) A few people we look after</div>
+            <div className="clients-sub">Currently active · 2026</div>
+          </div>
+          <div className="client-grid">
+            {clients.map(([n, d], i) => (
+              <div key={n} className={`client-cell${i % cols ? ' client-cell-indent' : ''}`}>
+                <div className="client-name">{n}</div>
+                <div className="client-detail">{d}</div>
+              </div>
+            ))}
+          </div>
+          <div className="clients-divider" />
+        </section>
+      );
+    }
 
-/* ── EditorialFooter ── */
-function EditorialFooter() {
-  return (
-    <footer className="footer">
-      <div>© 2026 GLS Infotech</div>
-      <div className="footer-location">Chennai — Pan-India</div>
-      <div className="footer-social">
-        {['Instagram','LinkedIn','Twitter'].map(s=><a key={s} href="#">{s}</a>)}
-      </div>
-    </footer>
-  );
-}
+    /* ── ProcessList ── */
+    function ProcessList() {
+      const steps = [
+        ['01', 'Walk your space', 'We visit (or video-call) your office, count the seats, check the Wi-Fi dead zones.'],
+        ['02', 'One monthly proposal', 'Everything you need on one line item. GST on top, no hidden charges.'],
+        ['03', 'We show up', 'Delivery, setup, cabling, Wi-Fi calibration, inductions for your team.'],
+        ['04', 'Call us, always', 'One number for every IT problem. We fix it, replace it or escalate it — same day.'],
+      ];
+      return (
+        <section className="process">
+          <div aria-hidden style={{ position: 'absolute', right: '10%', top: '20%', width: 340, height: 340, borderRadius: '50%', background: 'radial-gradient(circle,rgba(14,165,233,.16),transparent 70%)', filter: 'blur(70px)' }} />
+          <div className="process-label">(05) From hello to handover</div>
+          {steps.map(([n, t, d]) => (
+            <div key={n} className="process-row">
+              <div className="process-num">{n}</div>
+              <div className="process-title">{t}</div>
+              <div className="process-desc">{d}</div>
+            </div>
+          ))}
+          <div className="process-divider" />
+        </section>
+      );
+    }
 
-/* ── App ── */
-function App() {
-  return (
-    <>
-      <EditorialHeader/>
-      <EditorialHero/>
-      <Marquee/>
-      <Manifesto/>
-      <ServicesIndex/>
-      <ClientGrid/>
-      <ProcessList/>
-      <StatsBand/>
-      <PullQuote/>
-      <ContactBlock/>
-      <EditorialFooter/>
-    </>
-  );
-}
+    /* ── StatsBand ── */
+    function StatsBand() {
+      const stats = [['One', 'Invoice · one vendor'], ['7 days', 'From quote to desk'], ['Same day', 'On-site response'], ['Zero', 'Long contracts']];
+      return (
+        <section className="stats">
+          <div aria-hidden style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%,-50%)', width: 700, height: 220, borderRadius: '50%', background: 'radial-gradient(ellipse,rgba(99,102,241,.12),transparent 70%)', filter: 'blur(60px)', pointerEvents: 'none' }} />
+          {stats.map(([n, l], i) => (
+            <div key={n} className={`stat-cell${i ? '' : ''}`} style={{ borderLeft: i ? '1px solid rgba(245,242,236,.12)' : 'none' }}>
+              <div className="stat-num">{n}</div>
+              <div className="stat-label">{l}</div>
+            </div>
+          ))}
+        </section>
+      );
+    }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
-</script>
+    /* ── PullQuote ── */
+    function PullQuote() {
+      return (
+        <section className="pullquote">
+          <div aria-hidden style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 30% 40%,rgba(99,102,241,.14),transparent 50%),radial-gradient(circle at 70% 60%,rgba(14,165,233,.12),transparent 55%)', filter: 'blur(60px)' }} />
+          <div className="pullquote-text">
+            "We moved into our new office on a Monday morning. Laptops on desks, Wi-Fi covering every corner, the printer already on the network. It felt like magic — it was just GLS."
+          </div>
+          <div className="pullquote-attr">Priya M. — Operations, Nimbus Studio</div>
+        </section>
+      );
+    }
+
+    /* ── ContactBlock ── */
+    function ContactBlock() {
+      return (
+        <section id="contact" className="contact">
+          <div aria-hidden style={{ position: 'absolute', right: -200, top: -100, width: 700, height: 700, borderRadius: '50%', background: 'radial-gradient(circle,rgba(99,102,241,.18),transparent 70%)', filter: 'blur(90px)' }} />
+          <div className="contact-label">(06) Moving offices? Hiring fast? Wi-Fi broken?</div>
+          <h2 className="contact-heading">
+            Ring <span style={{ fontStyle: 'italic', color: '#6366f1' }}>us.</span>
+          </h2>
+          <div className="contact-grid">
+            <div className="contact-email-wrap">
+              <div className="contact-field-label">Email</div>
+              <a href="mailto:hello@glsinfotech.in" className="contact-email">hello@glsinfotech.in</a>
+            </div>
+            <div>
+              <div className="contact-field-label">Office</div>
+              <div className="contact-val">Chennai<br />Tamil Nadu, IN</div>
+            </div>
+            <div>
+              <div className="contact-field-label">Coverage</div>
+              <div className="contact-val">Pan-India<br />On-site · Remote</div>
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    /* ── EditorialFooter ── */
+    function EditorialFooter() {
+      return (
+        <footer className="footer">
+          <div>© 2026 GLS Infotech</div>
+          <div className="footer-location">Chennai — Pan-India</div>
+          <div className="footer-social">
+            {['Instagram', 'LinkedIn', 'Twitter'].map(s => <a key={s} href="#">{s}</a>)}
+          </div>
+        </footer>
+      );
+    }
+
+    /* ── App ── */
+    function App() {
+      return (
+        <>
+          <EditorialHeader />
+          <EditorialHero />
+          <Marquee />
+          <Manifesto />
+          <ServicesIndex />
+          <ClientGrid />
+          <ProcessList />
+          <StatsBand />
+          <PullQuote />
+          <ContactBlock />
+          <EditorialFooter />
+        </>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
 </body>
+
 </html>
